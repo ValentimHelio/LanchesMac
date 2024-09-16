@@ -9,3 +9,11 @@
   1- Criar Migração -> Add-migration 'NomeDaMigração' [options]<br>
   2- Aplicar Migração -> update-dataBase [options]<br>
   3- Remover Migração -> remove-migration<br>
+
+- Instalar a ferramenta de linha de comando do EF Core.<br>
+  -> dotnet tool install --global dotnet-ef<br>
+   1- Criar Migração -> dotnet ef migration add 'NomeDaMigração' [option]<br>
+   2- Aplicar Migração -> dotnet ef database update [option]<br>
+   3- Remover Migração -> dotnet ef migrations remove<br>
+
+ 
