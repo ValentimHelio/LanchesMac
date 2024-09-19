@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LanchesMac.Migrations
 {
-    [DbContext(typeof(AppDBbContext))]
+    [DbContext(typeof(AppDbContext))]
     partial class AppDBbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

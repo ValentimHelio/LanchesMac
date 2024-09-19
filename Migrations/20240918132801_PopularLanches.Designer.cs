@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LanchesMac.Migrations
 {
-    [DbContext(typeof(AppDBbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20240918132801_PopularLanches")]
     partial class PopularLanches
     {

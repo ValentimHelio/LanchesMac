@@ -7,9 +7,9 @@ namespace LanchesMac.Repositories
 {
     public class LancheRepository : ILanchesRepository
     {
-        public readonly AppDBbContext _context;
+        public readonly AppDbContext _context;
 
-        public LancheRepository(AppDBbContext context)
+        public LancheRepository(AppDbContext context)
         {
             _context = context;
         }

@@ -6,9 +6,9 @@ namespace LanchesMac.Repositories
 {
     public class CategoriaRepository : ICategoriasRepository
     {
-        public readonly AppDBbContext _context;
+        public readonly AppDbContext _context;
 
-        public CategoriaRepository(AppDBbContext context)
+        public CategoriaRepository(AppDbContext context)
         {
             _context = context;
         }

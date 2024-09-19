@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LanchesMac.Migrations
 {
-    [DbContext(typeof(AppDBbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20240919124319_CarrinhoCompraItem")]
     partial class CarrinhoCompraItem
     {
