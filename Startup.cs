@@ -19,7 +19,13 @@ public class Startup
         services.AddDbContext<AppDBbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         services.AddTransient<ILanchesRepository, LancheRepository>();
         services.AddTransient<ICategoriasRepository, CategoriaRepository>();
+
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        
         services.AddControllersWithViews();
+        
+        services.AddMemoryCache();
+        services.AddSession();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +45,7 @@ public class Startup
         app.UseStaticFiles();
 
         app.UseRouting();
+        app.UseSession();
 
         app.UseAuthorization();
 
