@@ -1,4 +1,6 @@
-﻿using LanchesMac.Context;
+﻿using AspNetCore;
+using LanchesMac.Context;
+using NuGet.Protocol;
 
 namespace LanchesMac.Models
 {
@@ -53,6 +55,28 @@ namespace LanchesMac.Models
                 carrinhoCompraItem.Quantidade++;
             }
             _context.SaveChanges();
+        }
+
+        public int RemoverDoCarrinho(Lanche lanche)
+        {
+            var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(s => s.Lanche.LancheId == lanche.LancheId && s.CarrinhoCompraId == CarrinhoCompraId);
+
+            var qtdLocal = 0;
+
+            if (carrinhoCompraItem != null)
+            {
+                if (carrinhoCompraItem.Quantidade > 1)
+                {
+                    carrinhoCompraItem.Quantidade--;
+                    qtdLocal = carrinhoCompraItem.Quantidade;
+                }
+                else
+                {
+                    _context.CarrinhoCompraItens.Remove(carrinhoCompraItem);
+                }
+            }
+            _context.SaveChanges();
+            return qtdLocal;
         }
     }
 }
