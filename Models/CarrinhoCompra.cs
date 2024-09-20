@@ -1,5 +1,6 @@
 ﻿using AspNetCore;
 using LanchesMac.Context;
+using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol;
 
 namespace LanchesMac.Models
@@ -77,6 +78,24 @@ namespace LanchesMac.Models
             }
             _context.SaveChanges();
             return qtdLocal;
+        }
+
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
+        {
+            return CarrinhoCompraItens ?? (CarrinhoCompraItens = _context.CarrinhoCompraItens.Where(c => c.CarrinhoCompraId == CarrinhoCompraId).Include(s => s.Lanche).ToList());
+        }
+
+        public void LimparCarrinho()
+        {
+            var carrinhoItens = _context.CarrinhoCompraItens.Where(c => c.CarrinhoCompraId == CarrinhoCompraId);
+            _context.RemoveRange(carrinhoItens);
+            _context.SaveChanges();
+        }
+
+        public decimal GetCarrinhoCompraToral()
+        {
+            var total = _context.CarrinhoCompraItens.Where(c => c.CarrinhoCompraId == CarrinhoCompraId).Select(c=> c.Lanche.Preco * c.Quantidade).Sum();
+            return total;
         }
     }
 }
