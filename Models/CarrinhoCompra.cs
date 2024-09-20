@@ -1,7 +1,5 @@
-﻿using AspNetCore;
-using LanchesMac.Context;
+﻿using LanchesMac.Context;
 using Microsoft.EntityFrameworkCore;
-using NuGet.Protocol;
 
 namespace LanchesMac.Models
 {
