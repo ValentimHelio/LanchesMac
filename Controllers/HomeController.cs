@@ -1,4 +1,6 @@
 ﻿using LanchesMac.Models;
+using LanchesMac.Repositories.Interfaces;
+using LanchesMac.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,10 +8,21 @@ namespace LanchesMac.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILanchesRepository _lanchesRepository;
+
+        public HomeController(ILanchesRepository lanchesRepository)
+        {
+            _lanchesRepository = lanchesRepository;
+        }
+
         public IActionResult Index()
         {
-            TempData["Nome"] = "Valentim Helio";
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                LanchesPreferido = _lanchesRepository.LanchesPreferidos
+            };
+
+            return View(homeViewModel);
         }
 
         public IActionResult Demo()
