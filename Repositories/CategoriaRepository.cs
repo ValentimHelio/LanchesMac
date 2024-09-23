@@ -13,6 +13,6 @@ namespace LanchesMac.Repositories
             _context = context;
         }
 
-        public IEnumerable<Categoria> Categorias => throw new NotImplementedException();
+        public IEnumerable<Categoria> Categorias => _context.Categorias;
     }
 }
