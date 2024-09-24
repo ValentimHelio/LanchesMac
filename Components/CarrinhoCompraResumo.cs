@@ -21,7 +21,7 @@ namespace LanchesMac.Components
             var carrinhoCompraVM = new CarrinhoCompraViewModel
             {
                 CarrinhoCompra = _carrinhoCompra,
-                CarrinhoCompraTotal = _carrinhoCompra.GetCarrinhoCompraToral()
+                CarrinhoCompraTotal = _carrinhoCompra.GetCarrinhoCompraTotal()
             };
 
             return View(carrinhoCompraVM);
