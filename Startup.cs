@@ -21,6 +21,8 @@ public class Startup
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         services.AddTransient<ILanchesRepository, LancheRepository>();
         services.AddTransient<ICategoriasRepository, CategoriaRepository>();
+        services.AddTransient<IPedidoRepository, PedidoRepository>();
+
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
