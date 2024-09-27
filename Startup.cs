@@ -4,8 +4,6 @@ using LanchesMac.Repositories;
 using LanchesMac.Repositories.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileSystemGlobbing.Internal;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 namespace LanchesMac;
 public class Startup
@@ -43,9 +41,9 @@ public class Startup
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
-        
+
         services.AddControllersWithViews();
-        
+
         services.AddMemoryCache();
         services.AddSession();
     }
@@ -63,7 +61,7 @@ public class Startup
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
-        app.UseHttpsRedirection(); 
+        app.UseHttpsRedirection();
         app.UseStaticFiles();
 
         app.UseRouting();
