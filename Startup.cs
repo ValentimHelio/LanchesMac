@@ -25,7 +25,7 @@ public class Startup
 
         services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
-        services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/Home/AccessDenied");
+        //services.ConfigureApplicationCookie(options => options.AccessDeniedPath = "/Home/AccessDenied");
 
         services.Configure<ConfigurationImagens>(Configuration.GetSection("ConfigurationPastaImagens"));
 
