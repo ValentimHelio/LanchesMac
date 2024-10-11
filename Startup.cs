@@ -1,4 +1,5 @@
 ﻿using LanchesMac.Areas.Admin.Services;
+using LanchesMac.Areas.Admin.Servicos;
 using LanchesMac.Context;
 using LanchesMac.Models;
 using LanchesMac.Repositories;
@@ -47,6 +48,7 @@ public class Startup
         services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
         services.AddScoped<RelatorioVendasServices>();
+        services.AddScoped<GraficoVendasService>();
 
         services.AddAuthorization(options =>
         {
