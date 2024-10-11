@@ -21,19 +21,19 @@ namespace LanchesMac.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(int dias)
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult VendasMensal()
+        public IActionResult VendasMensal(int dias)
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult VendasSemanal()
+        public IActionResult VendasSemanal(int dias)
         {
             return View();
         }
