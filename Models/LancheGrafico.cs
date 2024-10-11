@@ -3,7 +3,7 @@
     public class LancheGrafico
     {
         public string LancheNome { get; set; }
-        public int LancheQuantidade { get; set; }
-        public decimal LamcheValorTotal { get; set; }
+        public decimal LanchesValorTotal { get; set; }
+        public decimal LanchesQuantidade { get; set; }
     }
 }
