@@ -1,8 +1,5 @@
 ﻿using LanchesMac.Context;
 using LanchesMac.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace LanchesMac.Areas.Admin.Servicos
 {
